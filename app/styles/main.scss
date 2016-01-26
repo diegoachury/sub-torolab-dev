@@ -1,95 +1,240 @@
 $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
 // bower:scss
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+@import "font-awesome/scss/font-awesome.scss";
 // endbower
-
+@import "fonts";
+@import "responsive";
+@import "header";
 @import "slider";
 
-.browsehappy {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
+.hide-medium-up{
+  display: block;
+  @include tablet-portrait-and-up {
+    display: none;
+  }
 }
-
-body {
-  padding: 0;
+.hide-small-only{
+  display: none;
+  @include tablet-portrait-and-up {
+    display: block;
+  }
 }
-
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-/* Custom page header */
-.header {
-  border-bottom: 1px solid #e5e5e5;
-  margin-bottom: 10px;
-
-  /* Make the masthead heading the same height as the navigation */
-  h3 {
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 40px;
-    padding-bottom: 19px;
+.center-bg{
+  position: relative;
+  padding-top: 70px;
+  .center{
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    p.linea-left{
+      height: 50px;
+      display: inline-block;
+      border-left: 1px solid #606060;
+    }
+    a{
+      margin: 0 20px;
+      top: -32px;
+      position: relative;
+      &.left{}
+      &.right{}
+      @include tablet-portrait-and-up {
+         margin: 0 30px;
+      }
+    }
+  }
+  .contant-part{
+    background: url('../images/bg-curvo.png') no-repeat;
+    background-position: center center;
+    height: 200px;
+    width: 100%;
+    position: absolute;
+    top: -110px;
+    @include tablet-portrait-and-up {
+      background-size: 100%;
+      top: -155px;
+    }
+  }
+  .container-d-part{
+    background: url('../images/bg-curvo-b.png') no-repeat;
+    background-position: center center;
+    height: 168px;
+    width: 100%;
+    position: absolute;
+    bottom: -152px;
+    .content-company{
+      position: absolute;
+      text-align: center;
+      bottom: 16px;
+      left: 0;
+      right: 0;
+      p{
+        font-family: 'gothamblack';
+        margin: 0;
+        font-size: 1rem;
+        line-height: 1.2rem;
+        color: #606060;
+      }
+    }
+    .content-arrow{
+      text-align: center;
+      p.line{
+        display: block;
+        width: 50px;
+        border-bottom: 1px solid #787877;
+      }
+      ul{
+        padding: 0;
+        margin: 0 auto;
+        text-align: center;
+        li{
+          display: inline-block;
+          i{
+            position: relative;
+            top: -3px;
+            color: #A5A5A5;
+          }
+        }
+      }
+    }
   }
 }
 
-/* Custom page footer */
-.footer {
+.container-main{
+  position: relative;
+  .container-potatos{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    .pota-1{
+      z-index: 1;
+      background: url("../images/papas/01.png") no-repeat;
+      width: 180px;
+      height: 68px;
+      left: -50px;
+      top: 385px;
+      position: absolute;
+      @include tablet-landscape-and-up {
+        top: 286px;
+      }
+    }
+    .pota-2{
+      z-index: 1;
+      background: url("../images/papas/02.png") no-repeat;
+      width: 125px;
+      height: 68px;
+      right: 0;
+      top: 385px;
+      position: absolute;
+      @include tablet-landscape-and-up {
+        left: 250px;
+        top: 330px;
+      }
+    }
+    .pota-3{
+      display: none;
+      @include tablet-landscape-and-up {
+        position: absolute;
+        width: 74px;
+        height: 39px;
+        background: url("../images/papas/03.png") no-repeat;
+        display: block;
+        left: 650px;
+        top: 193px;
+        z-index: 1;
+      }
+    }
+    .pota-4{
+      display: none;
+      @include tablet-landscape-and-up {
+        position: absolute;
+        width: 145px;
+        height: 70px;
+        background: url("../images/papas/04.png") no-repeat;
+        display: block;
+        right: 0px;
+        top: 280px;
+        z-index: 1;
+      }
+    }
+  }
+  .content-img{
+    img{
+      width: 100%;
+      @include tablet-landscape-and-up {
+        width: 460px;
+      }
+    }
+  }
+  .content-copy{
+    text-align: center;
+    margin-bottom: 40px;
+    .box-shadow{
+      @include tablet-landscape-and-up {
+        margin: 20px 0;
+        background: url('../images/shadow-text.png') no-repeat;
+        opacity: 0.3;
+        background-position: center center;
+        width: 500px;
+        height: 50px;
+        float: right;
+      }
+    }
+    p{
+      font-family: 'gothamblack';
+      font-size: 3.2rem;
+      text-align: center;
+      line-height: 3.2rem;
+      color: #95091d;
+      margin: 0;
+      &.sub{
+        color: #700615;
+      }
+      @include tablet-landscape-and-up {
+        font-size: 5.2rem;
+        line-height: 1;
+        text-align: right;
+      }
+    }
+  }
+}
+footer{
+  margin-top: 100px;
+  // padding: 30px 0;
+  background: url("../images/bg-light.png") no-repeat;
   width: 100%;
-  background: url('../images/bg-footer.png');
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
-}
-
-.container-narrow > hr {
-  margin: 30px 0;
-}
-
-/* Main marketing message and sign up button */
-.jumbotron {
+  height: 100%;
+  background-position: center center;
+  background-size: cover;
   text-align: center;
-  border-bottom: 1px solid #e5e5e5;
+  .content-foot{
+    padding: 40px 0;
+    .content-copy{
+      padding: 50px 0 0 0;
+      .copy-left{
+        @include tablet-landscape-and-up {
+          float: left;
+        }
+      }
+      .copy-right{
+        @include tablet-landscape-and-up {
+          float: right;  
+        }
+      }
+      p{
+        margin-bottom: 0;
+      }
+    }
 
-  .btn {
-    font-size: 21px;
-    padding: 14px 24px;
   }
-}
-
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
-
-  p + h4 {
-    margin-top: 28px;
-  }
-}
-
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
-
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
+  p{
+    color: #fff;
+    font-family: 'gothamblack';
+    @include text-shadow(rgba(0,0,0,1.00) 0px 1px 0px);
   }
 }

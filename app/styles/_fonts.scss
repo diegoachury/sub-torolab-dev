@@ -1,0 +1,9 @@
+/* The long hand way. Yuck! */
+@font-face {
+  font-family: "gothamblack";
+  src: url('../fonts/gotham_black.eot');
+  src: url('../fonts/gotham_black.eot?#iefix') format('eot'),
+       url('../fonts/gotham_black.woff') format('woff'),
+       url('../fonts/gotham_black.ttf') format('truetype'),
+       url('../fonts/gotham_black.svg') format('svg');
+}

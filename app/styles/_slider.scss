@@ -1,6 +1,101 @@
 .container-slider{
+  padding: 20px 0;
+  position: relative;
   width: 100%;
+  height: 600px;
   background: url('../images/bg-light.png');
   background-position: cover;
   background-size: center center;
+  overflow: hidden;
+  @include tablet-landscape-and-up {
+    height: 395px;
+  }
+  .line-vertical{
+    @include transform(rotate(300deg) scale(4.11, 0.60) skew(23deg, 0deg));
+    width: 100%;
+    height: 100%;
+    background: rgba(247, 211, 30, 0.56);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    @include tablet-portrait-and-up {
+      @include transform(rotate(285deg) scale(21.11, 0.60) skew(42deg, 0deg));
+      right: -246px;
+    }
+  }
+  .light{
+    background: url(../images/light.png) no-repeat;
+    opacity: 0.7;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+  ul.slider{
+    margin: 0 auto;
+    padding: 0;
+  }
+  .filtre{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(248, 219, 37, 0.56);
+  }
+  .content-img{
+    img{
+      width: 100%;
+      @include tablet-landscape-and-up {
+        width: 470px;
+      }
+    }
+  }
+  .content-copy{
+    text-align: center;
+    margin-bottom: 30px;
+    p.medium{
+      font-family: 'gothamblack';
+      color: #6d1312;
+      font-size: 1.8rem;
+      &.top{
+        font-size: 4rem;
+        margin-bottom: 0;
+        line-height: 4rem;
+      }
+      &.sub{
+        font-size: 2.2rem;
+        margin-bottom: 0;
+      }
+    }
+    img.title{
+      width: 100%;
+      margin: 10px 0;
+      @include tablet-landscape-and-up {
+        width: 430px;
+      }
+    }
+    button{
+      @include box-shadow(rgba(73,12,3,1.00) 0px 0px 17px inset);
+      text-align: center;
+      border-radius: 4px;
+      color: #fff;
+      background: #6d1312;
+      padding: 1rem 2rem;
+      font-size: .9rem;
+      border-radius: 4px;
+      border: 0;
+      img{
+        margin: 0 8px;
+      }
+      span{
+        font-size: 2.2rem;
+      }
+    }
+  }
 }
